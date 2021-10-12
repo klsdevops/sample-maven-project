@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Deploy to tomcat server
-                deploy adapters: [tomcat8(credentialsId: 'deployer', path: '', url: 'http://3.140.1.119:8090/')], contextPath: 'webapp', onFailure: false, war: '**/*.war'
+                deploy adapters: [tomcat8(credentialsId: 'deployer', path: '', url: 'http://3.20.226.209:8090/')], contextPath: 'webapp', onFailure: false, war: '**/*.war'
             }
         }
     }
