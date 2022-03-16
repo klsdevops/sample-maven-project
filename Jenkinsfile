@@ -4,7 +4,7 @@ pipeline {
     tools {
       maven 'M2_HOME'
       git 'Default'
-      jdk 'JAVA_HOME'
+      jdk 'JAVA JDK'
     }
     
     environment {
@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Deploy to tomcat appserver
-                deploy adapters: [tomcat8(credentialsId: 'DeployerTomcat', path: '', url: 'http://13.59.150.228:8080/')], contextPath: 'webapp', onFailure: false, war: '**/*.war'
+                deploy adapters: [tomcat8(credentialsId: 'DeployToTomcat', path: '', url: 'http://3.22.114.118:8080/')], contextPath: 'webapp', onFailure: false, war: '**/*.war'
             }
         }
     }
