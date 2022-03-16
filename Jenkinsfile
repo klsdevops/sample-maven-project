@@ -28,7 +28,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                // Deploy to tomcat server
+                // Deploy to tomcat appserver
                 deploy adapters: [tomcat8(credentialsId: 'deployer', path: '', url: 'http://3.144.193.49:8090/')], contextPath: 'webapp', onFailure: false, war: '**/*.war'
             }
         }
